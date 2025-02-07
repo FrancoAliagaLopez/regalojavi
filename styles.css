@@ -1,0 +1,77 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: url('imagenes/fondo.avif') no-repeat center center fixed; /* Agregar imagen de fondo */
+    background-size: cover; /* Asegura que la imagen cubra todo el fondo */
+    background-attachment: fixed; /* Mantiene la imagen fija al hacer scroll */
+    color: black;
+    margin: 0;
+    padding: 0;
+}
+
+/* Contenedor del carrusel */
+.carousel-container {
+    position: relative;
+    width: 90%;
+    max-width: 900px;
+    margin: auto;
+    overflow: hidden; /* Ocultar las imágenes fuera del contenedor */
+    border-radius: 10px;
+    
+    padding: 20px; /* Espaciado interno */
+}
+
+/* Contenedor flexible para mantener todas las imágenes alineadas */
+.carousel-wrapper {
+    width: 100%;
+}
+
+/* Carrusel de imágenes */
+.carousel {
+    display: flex;
+    transition: transform 0.4s ease-in-out;
+}
+
+/* Estilos de imágenes del carrusel */
+.carousel img {
+    width: 100%;
+    height: auto; /* Mantiene la proporción original de la imagen */
+    max-height: 600px; /* Ajusta la altura del carrusel (puedes modificarlo según tu necesidad) */
+    object-fit: contain; /* Muestra la imagen completa sin recortar */
+    border-radius: 10px;
+}
+
+/* Botones de navegación del carrusel */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 12px;
+    font-size: 20px;
+    border-radius: 50%;
+    z-index: 2;
+    display: none; /* Se ocultan inicialmente */
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+/* Efecto hover */
+.carousel-btn:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+/* Mostrar los botones cuando sea necesario */
+.carousel-container:hover .carousel-btn {
+    display: block;
+}

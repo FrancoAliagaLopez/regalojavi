@@ -1,0 +1,129 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: url('imagenes/fondo.avif') no-repeat center center fixed; /* Agregar imagen de fondo */
+    background-size: cover; /* Asegura que la imagen cubra todo el fondo */
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px; /* Limitar el ancho del contenedor */
+    margin: 0 auto; /* Centrar el contenedor */
+    padding: 20px;
+}
+
+h1 {
+    font-size: 2.5em; /* Aumentar el tamaño del título */
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1.2em; /* Aumentar el tamaño del texto */
+    margin-bottom: 30px;
+}
+
+/* Estilos de la galería */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Aumentar el espacio entre las imágenes */
+}
+
+.image-item {
+    width: 300px; /* Ancho del card */
+    height: 350px; /* Altura del card */
+    cursor: pointer;
+    overflow: hidden; /* Ocultar el contenido que se desborda */
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Alinear el contenido al inicio */
+    background: white;
+}
+
+.image-item img {
+    width: 100%; /* Asegura que la imagen ocupe todo el ancho del card */
+    height: 100%; /* Ajustar la altura de la imagen para que se adapte al card */
+    object-fit: cover; /* Asegura que la imagen cubra el área sin dejar espacios en blanco */
+    border-radius: 10px; /* Bordes redondeados para la imagen */
+}
+
+.image-item:hover {
+    transform: scale(1.05); /* Efecto de zoom al pasar el mouse */
+}
+
+/* Texto debajo de cada imagen */
+.image-text {
+    font-size: 18px; /* Aumentar el tamaño del texto */
+    font-weight: bold;
+    color: black;
+    padding: 10px;
+    text-align: center; /* Centrar el texto */
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco semitransparente */
+    border-radius: 0 0 10px 10px; /* Bordes redondeados en la parte inferior */
+}
+
+/* Estilos del lightbox */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.lightbox-content {
+    position: relative;
+    margin: auto;
+    max-width: 800px;
+}
+
+.lightbox-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.prev {
+    left: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.next {
+    right: 0;
+    border-radius: 0 3px 3px 0;
+}
